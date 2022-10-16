@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-size: medium;
+}
+.social__icons > li {
+
+  padding: 8px 16px;
+}
+
+
+#Footer {
+  padding-bottom: 40px;
+  background-image: url(http://baojumbo.vn/wp-content/uploads/2021/03/footer-background.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+aside.__floating {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #ff7713;
+  -webkit-box-shadow: 0 -1px 0 rgb(0 0 0 / 20%);
+  -moz-box-shadow: 0 -1px 0 rgba(0,0,0,.2);
+  -o-box-shadow: 0 -1px 0 rgba(0,0,0,.2);
+  box-shadow: 0 -1px 0 rgb(0 0 0 / 20%);
+  font-size: 1.2em;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
