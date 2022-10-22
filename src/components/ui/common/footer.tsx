@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { FaArrowRight, FaFacebookF, FaGooglePlus, FaPhone, FaSkype, FaYoutube } from "react-icons/fa";
-import { MdArrowRight, MdEmail } from "react-icons/md"
+import { FaFacebookF, FaGooglePlus, FaPhone, FaSkype, FaYoutube } from "react-icons/fa";
+import { MdEmail } from "react-icons/md"
 import { BsFillCaretRightFill } from "react-icons/bs"
-import { IconType } from "react-icons/lib";
 
 
 
@@ -11,9 +10,9 @@ const Footer = () => {
     <footer id="Footer">
       {/* this is widget session */}
       <FooterWidgetWrapper />
+
       {/* footer bottom center */}
       <FooterBottomCenter />
-
 
       {/* footer copy right */}
       <FooterCopy />
@@ -28,9 +27,9 @@ export default Footer;
 
 const FooterWidgetWrapper = () => (
   <div className="__widget-wrapper pt-[60px] pb-[30px]">
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4">
       <div className="flex flex-col lg:flex-row text-white font-light text-sm gap-4">
-        <div className="col1 flex-1 leading-6 flex flex-col items-center mb-4">
+        <div className="col1 flex-1 flex flex-col mb-4">
           <h2 className="text-lg font-semibold mt-4 mb-1 text-[#F79727]">TỔNG QUAN VỀ CÔNG TY</h2>
           <div>
             <ul>
@@ -43,7 +42,7 @@ const FooterWidgetWrapper = () => (
             </ul>
           </div>
         </div>
-        <div className="col1 flex-1 leading-6 flex flex-col items-center">
+        <div className="col1 flex-1 flex flex-col ">
           <h2 className="text-lg font-semibold mb-1 mt-4 text-[#F79727]">CÔNG TY BAO BÌ LOUIS</h2>
           <div>
             <ul>
@@ -55,7 +54,7 @@ const FooterWidgetWrapper = () => (
             </ul>
           </div>
         </div>
-        <div className="col1 flex-1 leading-6 flex flex-col items-center lg:items-start">
+        <div className="col1 flex-1 leading-3 flex flex-col lg:items-start">
           <h2 className="text-lg font-semibold mb-1 mt-4 text-[#F79727]">DANH MỤC SẢN PHẨM</h2>
           <div>
             <ul>
@@ -172,21 +171,26 @@ const InfoFloating = () => {
     <aside className="__floating">
       <section className="flex w-full mx-auto max-w-[1400] text-white py-2 text-lg">
         <Link href={"tel:0915778874"} title="Mr. Phương - 0915.77.88.74">
-          <a className="flex-1 flex items-center justify-center hover:underline">
-            <span>
-              <FaPhone className="inline-block w-[18px] h-[18px] mr-2 mb-1" />
-              Ms. Cẩm -
+          <a className="min-w-fit flex-1 flex items-center justify-center hover:underline">
+            <div className="flex flex-col md:flex-row">
+              <span>
+                <FaPhone className="inline-block w-[18px] h-[18px] mr-2 mb-1" />
+                Ms. Cẩm -
+              </span>
               <strong>0915.77.88.74</strong>
-            </span>
+            </div>
           </a>
         </Link>
         <Link href="tel:0933707789" title="Ms. Cẩm - 0933.707.789">
-          <a className="flex-1 flex items-center justify-center hover:underline">
-            <span>
-              <FaPhone className="inline w-[18px] h-[18px] mr-2 mb-1" />
-              Mr. Phương -
+          <a className="min-w-fit flex-1 flex items-center justify-center hover:underline">
+
+            <div className="flex flex-col md:flex-row">
+              <span>
+                <FaPhone className="inline w-[18px] h-[18px] mr-2 mb-1" />
+                Mr. Phương -
+              </span>
               <strong>0933.707.789</strong>
-            </span>
+            </div>
           </a>
         </Link>
       </section>
@@ -205,17 +209,20 @@ const InfoItemWidget = ({
 }) => {
 
   return (
-    <li className="p-2 leading-6">
+    <li className="flex items-center gap-2">
       <span className="inline mr-2 w-[12px] h-[12px] text-[#F79727]">
-        {LeftIcon}
+        <LeftIcon />
       </span>
-      <BsFillCaretRightFill className="inline mr-2" size="12px" color={"#F79727"} />
-      <label className="mr-2">{label}</label>
-      <Link href={'/'} target={"_blank"} title="Skype">
-        <a className="hover:underline">
-          <span>{text}</span>
-        </a>
-      </Link>
+      <p>
+        <span className="mr-2">
+          {label}
+        </span>
+        <Link href={'/'} target={"_blank"} title="Skype">
+          <a className="hover:underline">
+            <span>{text}</span>
+          </a>
+        </Link>
+      </p>
     </li>
   )
 }

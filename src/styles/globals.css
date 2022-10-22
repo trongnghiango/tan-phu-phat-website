@@ -11,6 +11,12 @@ body {
   padding: 8px 16px;
 }
 
+#Header {
+  background-image: url(http://louispack.com/wp-content/uploads/2017/08/bg_header.png);
+  background-repeat: repeat;
+  background-position: center bottom;
+}
+
 
 #Footer {
   padding-bottom: 40px;
@@ -36,8 +42,85 @@ aside.__floating {
 
 p {
   display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+}
+
+.fade-animation
+{
+    display: block;
+    -webkit-animation: fadeInFromNone 2s ease-out;
+    -moz-animation: fadeInFromNone 2s ease-out;
+    -o-animation: fadeInFromNone 2s ease-out;
+    animation: fadeInFromNone 2s ease-out;
+}
+
+@-webkit-keyframes fadeOutFromView {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
 }

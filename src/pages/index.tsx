@@ -1,9 +1,21 @@
 import type { NextPage } from "next";
+import { useState } from "react"
 import Head from "next/head";
 import Footer from "../components/ui/common/footer";
-import Header from "../components/ui/common/header"
+import KHeader from "../components/ui/common/header"
+import { useScrollPosition } from "../hooks/useScrollPosition"
 
 const Home: NextPage = () => {
+  const [scrollUp, setScrollUp] = useState(false);
+  const [y, setY] = useState(0);
+  useScrollPosition(({ prevPos, currPos }) => {
+
+    //setScrollUp(currPos.y < -160);
+    setScrollUp(currPos.y - prevPos.y > 0);
+
+    setY(currPos.y);
+    console.log({ y })
+  });
   return (
     <>
       <Head>
@@ -13,7 +25,42 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Header />
+        <KHeader hidden={scrollUp} positionY={y} />
+        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
+          Create <span className="text-purple-300">T3</span> App
+        </h1>
+        <p className="text-2xl text-gray-700">This stack uses:</p>
+
+        {/** */}
+
+        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
+          Create <span className="text-purple-300">T3</span> App
+        </h1>
+        <p className="text-2xl text-gray-700">This stack uses:</p>
+        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
+          Create <span className="text-purple-300">T3</span> App
+        </h1>
+        <p className="text-2xl text-gray-700">This stack uses:</p>
+        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
+          Create <span className="text-purple-300">T3</span> App
+        </h1>
+        <p className="text-2xl text-gray-700">This stack uses:</p>
+        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
+          Create <span className="text-purple-300">T3</span> App
+        </h1>
+        <p className="text-2xl text-gray-700">This stack uses:</p>
+        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
+          Create <span className="text-purple-300">T3</span> App
+        </h1>
+        <p className="text-2xl text-gray-700">This stack uses:</p>
+        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
+          Create <span className="text-purple-300">T3</span> App
+        </h1>
+        <p className="text-2xl text-gray-700">This stack uses:</p>
+        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
+          Create <span className="text-purple-300">T3</span> App
+        </h1>
+        <p className="text-2xl text-gray-700">This stack uses:</p>
         <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
           Create <span className="text-purple-300">T3</span> App
         </h1>
