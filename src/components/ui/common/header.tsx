@@ -73,14 +73,14 @@ const KHeader: FC<Props> = ({ hidden, positionY }) => {
           <a className="flex items-center space-x-4">
             <div className="relative w-10 h-10 cursor-pointer">
               <Image
-                src="https://images.hdqwalls.com/wallpapers/bthumb/landscape-background.jpg"
+                src="/images/logo.png"
                 alt="Ngo NGHIA Headshot"
                 layout="fill"
                 objectFit="cover"
-                className="rounded-full"
+                className="rounded-full p-8"
               />
             </div>
-            <h1 className="hidden text-2xl font-bold md:block">TAN PHU PHAT</h1>
+            <h1 className="hidden text-2xl font-bold md:block">TÂN PHÚ PHÁT</h1>
           </a>
         </Link>
 
@@ -126,38 +126,43 @@ const KHeader: FC<Props> = ({ hidden, positionY }) => {
   )
 
   return (
-    <header>
-      <div id="Header" className="bg-green-200 flex flex-col justify-center ">
-        <HeaderInfo />
-        <div className="flex flex-col px-8 py-4 text-white">
-          <NavTemp />
+    <>
+      <header>
+        <div id="Header" className="bg-green-200 flex flex-col justify-center ">
+          <HeaderInfo />
+          <div className="flex flex-col px-8 py-4 text-white">
+            <NavTemp />
+          </div>
         </div>
-      </div>
-      {/** Floating View show when scroll not on top */}
-      <div className={`fixed top-0 w-full z-50 ${classname}`}>
+        {/** Floating View show when scroll not on top */}
+
+
+      </header>
+      <div className={`top-0 left-0 z-40 w-full bg-white ${classname}`}>
         <NavTemp />
         {/* View Mobile NAV - List ITEMS VIEW NGOAI*/}
-        {isOpen && (
-          <nav className="flex items-center lg:hidden">
-            <div className="flex flex-col items-center w-full py-12 space-y-8 bg-white shadow-md">
-              {headerNavLinks.map((nav) => (
-                <Link href={nav.href} key={nav.title} className="">
-                  <a className="w-4/5 py-4 text-lg font-bold text-center bg-white hover:bg-red-300">
-                    {nav.title}
-                  </a>
-                </Link>
-              ))}
-              {/* 
 
-            <ThemeToggle />
+      </div>
+      {isOpen && (
+        <nav className={`z-50 flex items-center lg:hidden `}>
+          <div className="flex flex-col items-center w-full py-12 space-y-8 bg-white shadow-md">
+            {headerNavLinks.map((nav) => (
+              <Link href={nav.href} key={nav.title} className="">
+                <a onClick={() => setOpen(false)}
+                  className="w-4/5 py-4 text-lg font-bold text-center bg-white hover:bg-red-300">
+                  {nav.title}
+                </a>
+              </Link>
+            ))}
+            {/* 
+
+        <ThemeToggle />
 */}
 
-            </div>
-          </nav>
-        )}
-      </div>
-
-    </header>
+          </div>
+        </nav>
+      )}
+    </>
   );
 }
 
@@ -167,8 +172,8 @@ const HeaderInfo = () => {
     <div className="flex px-4 py-2 bg-[#2C2C2C]" >
       <div className="container mx-auto flex flex-1 items-center justify-between">
         <div className="flex items-center gap-8">
-          <span className="text-[#F79727] font-semibold">{address}</span>
-          <ul className="flex gap-8 text-white font-extralight text-sm">
+          <span className="text-[#F79727] font-semibold lg:text-center">{address}</span>
+          <ul className="hidden lg:flex gap-8 text-white font-extralight text-sm">
             {
               members.map((member, idx) => <li className="" key={idx}>
                 <Item
@@ -180,7 +185,7 @@ const HeaderInfo = () => {
             <li>{email}</li>
           </ul>
         </div>
-        <ul className="social__icons flex text-white">
+        <ul className="social__icons hidden lg:flex text-white">
           <li className="__skype h-5 w-5">
             <Link href={'https://www.facebook.com'} target={"_blank"} title="Skype">
               <a>

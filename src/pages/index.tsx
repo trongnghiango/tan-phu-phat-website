@@ -4,6 +4,8 @@ import Head from "next/head";
 import Footer from "../components/ui/common/footer";
 import KHeader from "../components/ui/common/header"
 import { useScrollPosition } from "../hooks/useScrollPosition"
+import Image from "next/image";
+import { BsFillCaretLeftFill, BsFillCaretLeftSquareFill, BsFillCaretRightFill } from "react-icons/bs";
 
 const Home: NextPage = () => {
   const [scrollUp, setScrollUp] = useState(false);
@@ -24,8 +26,43 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="flex flex-col relative">
         <KHeader hidden={scrollUp} positionY={y} />
+        <section className="relative">
+          <div className={`flex w-full h-[600px]`} >
+            <Image
+              alt="Image Alt"
+              src="/images/bg-banner.jpg"
+              layout="fill"
+              objectFit="cover" // Scale your image down to fit into the container
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </div>
+          <div className="absolute right-0 bottom-0 z-50">
+            <div className="w-[300px] h-[200px] bg-red-300"></div>
+          </div>
+        </section>
+
+        <section className="container mx-auto bg-red-100">
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex gap-4 items-center py-8 text-[#F79727]">
+              <BsFillCaretRightFill />
+              <h1 className="text-3xl font-bold text-black">
+                SẢN PHẨM CAO CẤP
+              </h1>
+              <BsFillCaretLeftFill />
+            </div>
+            <div className="list-feature bg-green-400 flex gap-8 w-full">
+              {
+                feature.map(({ id, name, image }) => (
+                  <ProductFeature key={id} name={name} image={image} />
+                ))
+              }
+            </div>
+          </div>
+
+        </section>
+
         <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
           Create <span className="text-purple-300">T3</span> App
         </h1>
@@ -33,49 +70,6 @@ const Home: NextPage = () => {
 
         {/** */}
 
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          Create <span className="text-purple-300">T3</span> App
-        </h1>
         <p className="text-2xl text-gray-700">This stack uses:</p>
 
         <Footer />
@@ -86,3 +80,42 @@ const Home: NextPage = () => {
 
 export default Home;
 
+const ProductFeature = ({ id, name, image }: {
+  id?: string,
+  name: string,
+  image: string,
+}) => (
+  <div>
+    <div className="">
+      <img alt="Mountains" src="/images/bg-banner.jpg" className="custom-img"
+      />
+    </div>
+  </div>
+)
+
+const feature = [
+  {
+    id: '1',
+    name: "Bao BoDo chống phình",
+    image: "",
+
+  },
+  {
+    id: '2',
+    name: "Bao BoDo chống phình",
+    image: "",
+
+  },
+  {
+    id: '3',
+    name: "Bao BoDo chống phình",
+    image: "",
+
+  },
+  {
+    id: '4',
+    name: "Bao BoDo chống phình",
+    image: "",
+
+  },
+]
