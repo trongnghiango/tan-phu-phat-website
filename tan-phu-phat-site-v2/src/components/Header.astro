@@ -1,12 +1,14 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import {SITE_TITLE} from '../config';
+import FootprintIcon from './icons/footprint';
+import ThemeToggleButton from './ThemeToggleButton';
 
-let isOpen = false;
+let isOpen = true;
 ---
 
 <header
-  class="top-0 z-30 w-full h-auto backdrop-filter backdrop-blur-lg sticky"
+  class="top-0 z-30 w-full h-auto pq2 backdrop-filter backdrop-blur-lg sticky"
 >
   <div
     class="relative w-full transition-all ease-out duration-150 transform h-full"
@@ -16,14 +18,17 @@ let isOpen = false;
       class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center"
     >
       <div class="flex items-center justify-between">
+        <!-- logo and title name -->
         <a
-          class="text-xl font-bold text-gray-800 md:text-2xl hover:text-blue-400"
+          class="flex gap-2 text-xl font-bold text-gray-800 md:text-2xl hover:text-blue-400"
           href="#"
         >
-          <h2 class="text-2xl">
-            {SITE_TITLE}
-          </h2>
+          <FootprintIcon />
+          <!-- <h2> -->
+          {SITE_TITLE}
+          <!-- </h2> -->
         </a>
+
         <!-- Mobile menu button -->
         <div class="flex md:hidden">
           <button
@@ -51,23 +56,10 @@ let isOpen = false;
         <HeaderLink href="/">Home</HeaderLink>
         <HeaderLink href="/blog">Blog</HeaderLink>
         <HeaderLink href="/about">About</HeaderLink>
-        <!-- <a -->
-        <!--   class="text-sm text-gray-800 hover:text-blue-400" -->
-        <!--   href="index.html">Home</a -->
-        <!-- > -->
-        <!-- <a -->
-        <!--   class="text-sm text-gray-800 hover:text-blue-400" -->
-        <!--   href="properties.html">Properties</a -->
-        <!-- > -->
-        <!-- <a -->
-        <!--   class="text-sm text-gray-800 hover:text-blue-400" -->
-        <!--   href="single-property.html" -->
-        <!--   >Single Properties</a -->
-        <!-- > -->
-        <!-- <a -->
-        <!--   class="text-sm text-gray-800 hover:text-blue-400" -->
-        <!--   href="contact-us.html">Contact Us</a -->
-        <!-- > -->
+
+        <span>
+          <ThemeToggleButton client:load />
+        </span>
       </div>
     </nav>
   </div>
