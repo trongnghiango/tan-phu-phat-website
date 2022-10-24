@@ -1,4 +1,13 @@
 /** @type {import("prettier").Config} */
+// module.exports = {
+//   plugins: [require.resolve("prettier-plugin-tailwindcss")],
+// };
 module.exports = {
-  plugins: [require.resolve("prettier-plugin-tailwindcss")],
-};
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'none',
+  bracketSpacing: true,
+  endOfLine: 'lf',
+}
+

@@ -5,7 +5,8 @@ import Footer from "../components/ui/common/footer";
 import KHeader from "../components/ui/common/header"
 import { useScrollPosition } from "../hooks/useScrollPosition"
 import Image from "next/image";
-import { BsFillCaretLeftFill, BsFillCaretLeftSquareFill, BsFillCaretRightFill } from "react-icons/bs";
+import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
+import FeaturedSection from "../components/FeaturedSection";
 
 const Home: NextPage = () => {
   const [scrollUp, setScrollUp] = useState(false);
@@ -43,6 +44,7 @@ const Home: NextPage = () => {
           </div>
         </section>
 
+
         <section className="container mx-auto bg-red-100">
           <div className="flex flex-col justify-center items-center">
             <div className="flex gap-4 items-center py-8 text-[#F79727]">
@@ -63,6 +65,8 @@ const Home: NextPage = () => {
 
         </section>
 
+        <FeaturedSection />
+
         <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
           Create <span className="text-purple-300">T3</span> App
         </h1>
@@ -80,15 +84,16 @@ const Home: NextPage = () => {
 
 export default Home;
 
-const ProductFeature = ({ id, name, image }: {
+const ProductFeature = ({ name, image }: {
   id?: string,
   name: string,
   image: string,
 }) => (
   <div>
     <div className="">
-      <img alt="Mountains" src="/images/bg-banner.jpg" className="custom-img"
+      <img alt="Mountains" src={image} className="custom-img"
       />
+      <h3>{name}</h3>
     </div>
   </div>
 )
@@ -97,7 +102,7 @@ const feature = [
   {
     id: '1',
     name: "Bao BoDo chống phình",
-    image: "",
+    image: "/images/bg-banner.jpg",
 
   },
   {
