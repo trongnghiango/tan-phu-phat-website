@@ -4,11 +4,11 @@
 // };
 module.exports = {
   semi: true,
-  printWidth: 50,
+  printWidth: 80,
   singleQuote: true,
   tabWidth: 2,
   trailingComma: 'none',
-  bracketSpacing: true,
+  bracketSpacing: false,
   endOfLine: 'lf',
 }
 
